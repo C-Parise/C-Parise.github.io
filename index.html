@@ -1,10 +1,707 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Meu site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cauê Parise | Portfólio</title>
+
+    <meta name="description" content="Portfólio de Cauê Parise — projetos, habilidades e experiências.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #070b14;
+            --bg2: #0d1322;
+            --card: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.10);
+            --text: #f5f7ff;
+            --muted: #a8b0c2;
+            --primary: #6c63ff;
+            --secondary: #00d4ff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.12), transparent 25%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            background: rgba(7, 11, 20, 0.75);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1100px;
+            margin: auto;
+            padding: 150px 25px 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hello {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.35);
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: rgba(108, 99, 255, 0.12);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            color: #dddfff;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            overflow: hidden;
+        }
+
+        .project-icon {
+            height: 150px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(108, 99, 255, 0.4),
+                    rgba(0, 212, 255, 0.2)
+                );
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid rgba(108, 99, 255, 0.4);
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+            left: -37px;
+            top: 7px;
+            box-shadow: 0 0 15px var(--secondary);
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item span {
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            max-width: 750px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social {
+            padding: 12px 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Olá! 👋</h1>
-    <p>Esse é meu GitHub Pages.</p>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">
+                C<span>.</span>Parise
+            </a>
+
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main id="inicio">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="hello">
+                    👋 Olá, eu sou
+                </div>
+
+                <h1>
+                    Cauê <span>Parise</span>
+                </h1>
+
+                <p>
+                    Desenvolvedor e profissional apaixonado por tecnologia,
+                    desenvolvimento e criação de soluções digitais.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projetos" class="btn btn-primary">
+                        Ver meus projetos
+                    </a>
+
+                    <a href="#contato" class="btn">
+                        Entre em contato
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOBRE -->
+
+        <section id="sobre">
+
+            <h2 class="section-title">
+                Sobre mim
+            </h2>
+
+            <p class="section-subtitle">
+                Um pouco sobre quem eu sou e o que faço.
+            </p>
+
+            <div class="about">
+
+                <div class="card">
+
+                    <h3>Quem sou eu?</h3>
+
+                    <br>
+
+                    <p>
+                        Olá! Meu nome é Cauê Parise. Sou uma pessoa
+                        interessada em tecnologia, programação e desenvolvimento
+                        de projetos digitais.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Estou sempre buscando aprender novas tecnologias,
+                        desenvolver minhas habilidades e transformar ideias
+                        em projetos reais.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Meu objetivo</h3>
+
+                    <br>
+
+                    <p>
+                        Meu objetivo é continuar evoluindo profissionalmente,
+                        adquirir experiência e participar de projetos
+                        interessantes que envolvam tecnologia e inovação.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+
+        <section id="habilidades">
+
+            <h2 class="section-title">
+                Habilidades
+            </h2>
+
+            <p class="section-subtitle">
+                Tecnologias e áreas que estou estudando ou utilizando.
+            </p>
+
+            <div class="card">
+
+                <div class="skills">
+
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Git</div>
+                    <div class="skill">GitHub</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">Web Development</div>
+                    <div class="skill">UI / UX</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETOS -->
+
+        <section id="projetos">
+
+            <h2 class="section-title">
+                Projetos
+            </h2>
+
+            <p class="section-subtitle">
+                Alguns projetos que desenvolvi ou estou desenvolvendo.
+            </p>
+
+            <div class="projects">
+
+
+                <div class="card project">
+
+                    <div class="project-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Meu primeiro projeto
+                    </h3>
+
+                    <p>
+                        Descrição do seu projeto. Explique aqui o que
+                        você desenvolveu e quais tecnologias utilizou.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        Ver projeto →
+                    </a>
+
+                </div>
+
+
+                <div class="card project">
+
+                    <div class="project-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Projeto Web
+                    </h3>
+
+                    <p>
+                        Uma aplicação ou página web criada para demonstrar
+                        minhas habilidades de desenvolvimento.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        Ver projeto →
+                    </a>
+
+                </div>
+
+
+                <div class="card project">
+
+                    <div class="project-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Novo projeto
+                    </h3>
+
+                    <p>
+                        Em breve adicionarei mais informações sobre este
+                        projeto.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        Ver projeto →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIÊNCIA -->
+
+        <section id="experiencia">
+
+            <h2 class="section-title">
+                Experiência
+            </h2>
+
+            <p class="section-subtitle">
+                Minha trajetória profissional e acadêmica.
+            </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <h3>
+                        Desenvolvimento e estudos
+                    </h3>
+
+                    <span>
+                        Atual
+                    </span>
+
+                    <p>
+                        Desenvolvimento de projetos pessoais,
+                        estudos de programação e aprendizado contínuo
+                        em tecnologia.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        Projetos pessoais
+                    </h3>
+
+                    <span>
+                        2025 — Atual
+                    </span>
+
+                    <p>
+                        Criação de projetos para colocar em prática
+                        conhecimentos de programação e desenvolvimento web.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section id="contato" class="contact">
+
+            <h2 class="section-title">
+                Vamos conversar?
+            </h2>
+
+            <p>
+                Estou aberto a oportunidades, projetos, colaborações
+                e novas conexões.
+            </p>
+
+            <div class="socials">
+
+                <!-- TROQUE OS LINKS ABAIXO PELOS SEUS -->
+
+                <a
+                    href="https://github.com/C-Parise"
+                    target="_blank"
+                    class="social"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="#"
+                    target="_blank"
+                    class="social"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="mailto:seuemail@email.com"
+                    class="social"
+                >
+                    Email
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Cauê Parise. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
 </body>
 </html>
