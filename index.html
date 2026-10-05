@@ -30,8 +30,16 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background:
-                radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.18), transparent 30%),
-                radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.12), transparent 25%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(108, 99, 255, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(0, 212, 255, 0.12),
+                    transparent 25%
+                ),
                 var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -117,7 +125,11 @@
         }
 
         h1 span {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary)
+            );
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -145,7 +157,11 @@
         }
 
         .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary)
+            );
             color: white;
             border: none;
         }
@@ -214,131 +230,58 @@
             color: #dddfff;
         }
 
-        <!-- PROJECTS -->
+        /* PROJECTS */
 
-<section id="projetos">
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
 
-    <h2 class="section-title">
-        Projects
-    </h2>
+        .project {
+            overflow: hidden;
+        }
 
-    <p class="section-subtitle">
-        Projects I developed to practice and demonstrate my skills.
-    </p>
+        .project-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: block;
+            border: 1px solid var(--border);
+        }
 
-    <div class="projects">
+        .project h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
 
-        <!-- ROPICKS -->
+        .project p {
+            margin-bottom: 15px;
+        }
 
-        <div class="card project">
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
 
-            <img
-                src="ropicks.png"
-                alt="Ropicks - Unreal Engine 5 game"
-                class="project-image"
-            >
+        .project-tags span {
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: rgba(108, 99, 255, 0.12);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            color: #dddfff;
+            font-size: 13px;
+        }
 
-            <h3>
-                Ropicks
-            </h3>
-
-            <p>
-                Ropicks is a mining game developed in
-                <strong>Unreal Engine 5</strong> using
-                <strong>Blueprints</strong>.
-            </p>
-
-            <p>
-                I created this project to test and apply the knowledge
-                I acquired during my Game Engine 1 classes.
-            </p>
-
-            <p>
-                In the game, the player uses a pickaxe to mine rocks
-                and collect resources. The player can upgrade the
-                pickaxe to become stronger and mine larger rocks,
-                allowing them to progress further through the game.
-            </p>
-
-            <p>
-                The project has been completed and was developed as
-                a practical project to put my game development
-                knowledge into practice.
-            </p>
-
-            <div class="project-tags">
-
-                <span>Unreal Engine 5</span>
-                <span>Blueprints</span>
-                <span>Game Development</span>
-                <span>3D</span>
-
-            </div>
-
-            <div class="project-status">
-                ✓ Completed
-            </div>
-
-        </div>
-
-
-        <!-- BRENISH -->
-
-        <div class="card project">
-
-            <img
-                src="brenish.png"
-                alt="Brenish - Unreal Engine 5 2.5D boss fight"
-                class="project-image"
-            >
-
-            <h3>
-                Brenish
-            </h3>
-
-            <p>
-                Brenish is a <strong>2.5D boss fight</strong> developed
-                in <strong>Unreal Engine 5</strong>.
-            </p>
-
-            <p>
-                I created this project to practice and improve my
-                knowledge of <strong>Artificial Intelligence</strong>
-                and game development.
-            </p>
-
-            <p>
-                The player must survive the fight while battling
-                a powerful boss. The main challenge is to avoid the
-                boss's attacks, manage the fight, and deal enough
-                damage to defeat it.
-            </p>
-
-            <p>
-                The project focuses on experimenting with AI behavior,
-                combat mechanics, and boss fight design in a 2.5D
-                environment.
-            </p>
-
-            <div class="project-tags">
-
-                <span>Unreal Engine 5</span>
-                <span>Artificial Intelligence</span>
-                <span>2.5D</span>
-                <span>Boss Fight</span>
-                <span>Game Development</span>
-
-            </div>
-
-            <div class="project-status">
-                ✓ Completed
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+        .project-status {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-top: 25px;
+        }
 
         /* EXPERIENCE */
 
@@ -454,6 +397,7 @@
     <!-- NAVBAR -->
 
     <header>
+
         <nav>
 
             <a href="#inicio" class="logo">
@@ -469,6 +413,7 @@
             </ul>
 
         </nav>
+
     </header>
 
 
@@ -589,6 +534,7 @@
                     <div class="skill">Python</div>
                     <div class="skill">Unreal Engine 5</div>
                     <div class="skill">Blueprints</div>
+                    <div class="skill">Artificial Intelligence</div>
                     <div class="skill">Game Development</div>
                     <div class="skill">Web Development</div>
                     <div class="skill">UI / UX</div>
@@ -609,10 +555,13 @@
             </h2>
 
             <p class="section-subtitle">
-                A project I developed to practice and demonstrate my skills.
+                Projects I developed to practice and demonstrate my skills.
             </p>
 
             <div class="projects">
+
+
+                <!-- ROPICKS -->
 
                 <div class="card project">
 
@@ -665,6 +614,61 @@
 
                 </div>
 
+
+                <!-- BRENISH -->
+
+                <div class="card project">
+
+                    <img
+                        src="brenish.png"
+                        alt="Brenish - Unreal Engine 5 2.5D boss fight"
+                        class="project-image"
+                    >
+
+                    <h3>
+                        Brenish
+                    </h3>
+
+                    <p>
+                        Brenish is a <strong>2.5D boss fight</strong>
+                        developed in <strong>Unreal Engine 5</strong>.
+                    </p>
+
+                    <p>
+                        I created this project to practice and improve
+                        my knowledge of <strong>Artificial Intelligence</strong>
+                        and game development.
+                    </p>
+
+                    <p>
+                        In the game, the player must survive the fight
+                        while battling a powerful boss. The main challenge
+                        is to avoid the boss's attacks, manage the fight,
+                        and deal enough damage to defeat it.
+                    </p>
+
+                    <p>
+                        The project focuses on experimenting with AI behavior,
+                        combat mechanics, and boss fight design in a 2.5D
+                        environment.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Unreal Engine 5</span>
+                        <span>Artificial Intelligence</span>
+                        <span>2.5D</span>
+                        <span>Boss Fight</span>
+                        <span>Game Development</span>
+
+                    </div>
+
+                    <div class="project-status">
+                        ✓ Completed
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -697,7 +701,8 @@
                     <p>
                         Studying game development and programming while
                         developing personal projects and practicing
-                        technologies such as Unreal Engine 5 and Blueprints.
+                        technologies such as Unreal Engine 5, Blueprints,
+                        and Artificial Intelligence.
                     </p>
 
                 </div>
@@ -717,6 +722,25 @@
                         Developed a complete mining game in Unreal Engine 5
                         using Blueprints as a practical project for my
                         Game Engine 1 classes.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        Brenish
+                    </h3>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <p>
+                        Developed a 2.5D boss fight in Unreal Engine 5
+                        to practice Artificial Intelligence, combat
+                        mechanics, and boss behavior.
                     </p>
 
                 </div>
