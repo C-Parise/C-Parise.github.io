@@ -214,58 +214,131 @@
             color: #dddfff;
         }
 
-        /* PROJECTS */
+        <!-- PROJECTS -->
 
-        .projects {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
+<section id="projetos">
 
-        .project {
-            overflow: hidden;
-        }
+    <h2 class="section-title">
+        Projects
+    </h2>
 
-        .project-image {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            display: block;
-            border: 1px solid var(--border);
-        }
+    <p class="section-subtitle">
+        Projects I developed to practice and demonstrate my skills.
+    </p>
 
-        .project h3 {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
+    <div class="projects">
 
-        .project p {
-            margin-bottom: 15px;
-        }
+        <!-- ROPICKS -->
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
+        <div class="card project">
 
-        .project-tags span {
-            padding: 7px 14px;
-            border-radius: 20px;
-            background: rgba(108, 99, 255, 0.12);
-            border: 1px solid rgba(108, 99, 255, 0.3);
-            color: #dddfff;
-            font-size: 13px;
-        }
+            <img
+                src="ropicks.png"
+                alt="Ropicks - Unreal Engine 5 game"
+                class="project-image"
+            >
 
-        .project-status {
-            color: var(--secondary);
-            font-weight: bold;
-            margin-top: 25px;
-        }
+            <h3>
+                Ropicks
+            </h3>
+
+            <p>
+                Ropicks is a mining game developed in
+                <strong>Unreal Engine 5</strong> using
+                <strong>Blueprints</strong>.
+            </p>
+
+            <p>
+                I created this project to test and apply the knowledge
+                I acquired during my Game Engine 1 classes.
+            </p>
+
+            <p>
+                In the game, the player uses a pickaxe to mine rocks
+                and collect resources. The player can upgrade the
+                pickaxe to become stronger and mine larger rocks,
+                allowing them to progress further through the game.
+            </p>
+
+            <p>
+                The project has been completed and was developed as
+                a practical project to put my game development
+                knowledge into practice.
+            </p>
+
+            <div class="project-tags">
+
+                <span>Unreal Engine 5</span>
+                <span>Blueprints</span>
+                <span>Game Development</span>
+                <span>3D</span>
+
+            </div>
+
+            <div class="project-status">
+                ✓ Completed
+            </div>
+
+        </div>
+
+
+        <!-- BRENISH -->
+
+        <div class="card project">
+
+            <img
+                src="brenish.png"
+                alt="Brenish - Unreal Engine 5 2.5D boss fight"
+                class="project-image"
+            >
+
+            <h3>
+                Brenish
+            </h3>
+
+            <p>
+                Brenish is a <strong>2.5D boss fight</strong> developed
+                in <strong>Unreal Engine 5</strong>.
+            </p>
+
+            <p>
+                I created this project to practice and improve my
+                knowledge of <strong>Artificial Intelligence</strong>
+                and game development.
+            </p>
+
+            <p>
+                The player must survive the fight while battling
+                a powerful boss. The main challenge is to avoid the
+                boss's attacks, manage the fight, and deal enough
+                damage to defeat it.
+            </p>
+
+            <p>
+                The project focuses on experimenting with AI behavior,
+                combat mechanics, and boss fight design in a 2.5D
+                environment.
+            </p>
+
+            <div class="project-tags">
+
+                <span>Unreal Engine 5</span>
+                <span>Artificial Intelligence</span>
+                <span>2.5D</span>
+                <span>Boss Fight</span>
+                <span>Game Development</span>
+
+            </div>
+
+            <div class="project-status">
+                ✓ Completed
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
         /* EXPERIENCE */
 
