@@ -218,7 +218,7 @@
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
             gap: 20px;
         }
 
@@ -226,33 +226,45 @@
             overflow: hidden;
         }
 
-        .project-icon {
-            height: 150px;
+        .project-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(108, 99, 255, 0.4),
-                    rgba(0, 212, 255, 0.2)
-                );
+            margin-bottom: 25px;
+            display: block;
+            border: 1px solid var(--border);
         }
 
         .project h3 {
-            margin-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 12px;
         }
 
         .project p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .project-link {
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .project-tags span {
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: rgba(108, 99, 255, 0.12);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            color: #dddfff;
+            font-size: 13px;
+        }
+
+        .project-status {
             color: var(--secondary);
             font-weight: bold;
+            margin-top: 25px;
         }
 
         /* EXPERIENCE */
@@ -356,6 +368,10 @@
             .hero p {
                 font-size: 18px;
             }
+
+            .project-image {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -366,6 +382,7 @@
 
     <header>
         <nav>
+
             <a href="#inicio" class="logo">
                 C<span>.</span>Parise
             </a>
@@ -377,6 +394,7 @@
                 <li><a href="#experiencia">Experience</a></li>
                 <li><a href="#contato">Contact</a></li>
             </ul>
+
         </nav>
     </header>
 
@@ -399,7 +417,7 @@
 
                 <p>
                     Developer and technology enthusiast passionate about
-                    development and creating digital solutions.
+                    development, game development, and creating digital solutions.
                 </p>
 
                 <div class="buttons">
@@ -441,7 +459,8 @@
 
                     <p>
                         Hello! My name is Cauê Parise. I am interested in
-                        technology, programming, and digital project development.
+                        technology, programming, game development, and
+                        digital project development.
                     </p>
 
                     <br>
@@ -462,7 +481,8 @@
                     <p>
                         My goal is to continue growing professionally,
                         gain experience, and participate in interesting
-                        projects involving technology and innovation.
+                        projects involving technology, game development,
+                        and innovation.
                     </p>
 
                 </div>
@@ -494,6 +514,9 @@
                     <div class="skill">Git</div>
                     <div class="skill">GitHub</div>
                     <div class="skill">Python</div>
+                    <div class="skill">Unreal Engine 5</div>
+                    <div class="skill">Blueprints</div>
+                    <div class="skill">Game Development</div>
                     <div class="skill">Web Development</div>
                     <div class="skill">UI / UX</div>
 
@@ -513,73 +536,59 @@
             </h2>
 
             <p class="section-subtitle">
-                Some projects I have developed or am currently working on.
+                A project I developed to practice and demonstrate my skills.
             </p>
 
             <div class="projects">
 
-
                 <div class="card project">
 
-                    <div class="project-icon">
-                        💻
-                    </div>
+                    <img
+                        src="ropicks.jpg"
+                        alt="Ropicks - Unreal Engine 5 game"
+                        class="project-image"
+                    >
 
                     <h3>
-                        My First Project
+                        Ropicks
                     </h3>
 
                     <p>
-                        Project description. Explain here what you developed
-                        and which technologies you used.
+                        Ropicks is a mining game developed in
+                        <strong>Unreal Engine 5</strong> using
+                        <strong>Blueprints</strong>.
                     </p>
-
-                    <a href="#" class="project-link">
-                        View project →
-                    </a>
-
-                </div>
-
-
-                <div class="card project">
-
-                    <div class="project-icon">
-                        🚀
-                    </div>
-
-                    <h3>
-                        Web Project
-                    </h3>
 
                     <p>
-                        A web application or webpage created to demonstrate
-                        my development skills.
+                        I created this project to test and apply the knowledge
+                        I acquired during my Game Engine 1 classes.
                     </p>
-
-                    <a href="#" class="project-link">
-                        View project →
-                    </a>
-
-                </div>
-
-
-                <div class="card project">
-
-                    <div class="project-icon">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        New Project
-                    </h3>
 
                     <p>
-                        More information about this project will be added soon.
+                        In the game, the player uses a pickaxe to mine rocks
+                        and collect resources. The player can upgrade the
+                        pickaxe to become stronger and mine larger rocks,
+                        allowing them to progress further through the game.
                     </p>
 
-                    <a href="#" class="project-link">
-                        View project →
-                    </a>
+                    <p>
+                        The project has been completed and was developed as
+                        a practical project to put my game development
+                        knowledge into practice.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Unreal Engine 5</span>
+                        <span>Blueprints</span>
+                        <span>Game Development</span>
+                        <span>3D</span>
+
+                    </div>
+
+                    <div class="project-status">
+                        ✓ Completed
+                    </div>
 
                 </div>
 
@@ -605,7 +614,7 @@
                 <div class="timeline-item">
 
                     <h3>
-                        Development & Learning
+                        Game Development & Learning
                     </h3>
 
                     <span>
@@ -613,8 +622,9 @@
                     </span>
 
                     <p>
-                        Developing personal projects, studying programming,
-                        and continuously learning about technology.
+                        Studying game development and programming while
+                        developing personal projects and practicing
+                        technologies such as Unreal Engine 5 and Blueprints.
                     </p>
 
                 </div>
@@ -623,16 +633,17 @@
                 <div class="timeline-item">
 
                     <h3>
-                        Personal Projects
+                        Ropicks
                     </h3>
 
                     <span>
-                        2025 — Present
+                        Completed
                     </span>
 
                     <p>
-                        Creating projects to practice programming knowledge
-                        and web development skills.
+                        Developed a complete mining game in Unreal Engine 5
+                        using Blueprints as a practical project for my
+                        Game Engine 1 classes.
                     </p>
 
                 </div>
@@ -656,8 +667,6 @@
             </p>
 
             <div class="socials">
-
-                <!-- REPLACE THE LINKS BELOW WITH YOUR OWN -->
 
                 <a
                     href="https://github.com/C-Parise"
